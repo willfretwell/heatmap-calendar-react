@@ -1,0 +1,27 @@
+{
+  "name": "heatmap-calendar-react",
+  "version": "1.0.0-beta.1",
+  "description": "\u0016A calendar with heatmap visualization. Based on GitHub's commit graph.",
+  "main": "heatMapGraph.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/willfretwell/heatmap-calendar-react.git"
+  },
+  "keywords": [
+    "heatmap",
+    "calendar",
+    "react",
+    "github",
+    "commit",
+    "chart"
+  ],
+  "author": "Will Fretwell",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/willfretwell/heatmap-calendar-react/issues"
+  },
+  "homepage": "https://github.com/willfretwell/heatmap-calendar-react#readme"
+}
