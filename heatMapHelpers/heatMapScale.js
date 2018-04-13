@@ -8,27 +8,27 @@ function gradient() {
 
 function box(highestTotal) {
     return <div className="heatMapScale">
-        <div className="heatMapGridItem scale" style={{ backgroundColor: "#dddddd" }}>
+        <div className="heatMapGridItem scale colorScale0">
             <span className="heatMapGridItemTooltip">
                 0
             </span>
         </div>
-        <div className="heatMapGridItem scale" style={{ backgroundColor: "#02b8b8" }}>
+        <div className="heatMapGridItem scale colorScale1">
             <span className="heatMapGridItemTooltip">
                 {"1 - " + Math.round(highestTotal / 4 * 1)}
             </span>
         </div>
-        <div className="heatMapGridItem scale" style={{ backgroundColor: "#029292" }}>
+        <div className="heatMapGridItem scale colorScale2">
             <span className="heatMapGridItemTooltip">
                 {Math.round(highestTotal / 4 * 1) + " - " + Math.round(highestTotal / 4 * 2)}
             </span>
         </div>
-        <div className="heatMapGridItem scale" style={{ backgroundColor: "#016b6b" }}>
+        <div className="heatMapGridItem scale colorScale3">
             <span className="heatMapGridItemTooltip">
                 {Math.round(highestTotal / 4 * 2) + " - " + Math.round(highestTotal / 4 * 3)}
             </span>
         </div>
-        <div className="heatMapGridItem scale" style={{ backgroundColor: "#014444" }}>
+        <div className="heatMapGridItem scale colorScale4">
             <span className="heatMapGridItemTooltip">
                 {Math.round(highestTotal / 4 * 3) + " - " + highestTotal}
             </span>
