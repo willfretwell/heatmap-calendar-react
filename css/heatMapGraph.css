@@ -1,0 +1,188 @@
+.heatMapGrid {
+    width: 70px;
+    height: 70px;
+    display: grid;
+    grid-gap: 0px;
+    grid-template-columns: repeat(7, 0fr);
+    margin-bottom: 40px;
+    margin-top: 10px;
+    margin-left: 25px;
+    transform: rotate(-90deg) scaleX(-1);
+    font-size: 8.1px;
+}
+
+.heatMapGridItem {
+    width: 13px;
+    height: 13px;
+    border: 1px solid #ffffff;
+    transform: rotate(-90deg) scaleX(-1);
+    transition: font-size .2s ease-in-out, box-shadow .2s ease-out;
+    text-align: center;
+    border-radius: 1px;
+}
+
+.heatMapGridItem.shrink {
+    width: 11px!important;
+    height: 11px!important;
+}
+
+.heatMapGridItem.empty {
+    background-color: #ddd;
+    color: #000;
+}
+
+.heatMapGridItem.empty:hover .heatMapGridItemBackground {
+    box-shadow: inset 0 0 0 1px #ddd, inset 0 0 0 3px #fff;
+    opacity: 1;
+}
+
+.heatMapGridItem.most1 {
+    color: #f0f0f0;
+    cursor: pointer;
+}
+
+.heatMapGridItem.most0 {
+    cursor: pointer;
+}
+
+.heatMapGridItem.most1:hover .heatMapGridItemBackground, .heatMapGridItem.most0:hover .heatMapGridItemBackground {
+    box-shadow: inset 0 0 0 1px #02a5a5, inset 0 0 0 3px #fff;
+}
+
+.heatMapGridItem.legend {
+    background-color: #fff;
+    color: #4f5858;
+    font-weight: 900;
+}
+
+.heatMapGridItem.lastYear {
+    background-color: #ddd;
+}
+
+.heatMapGridItem.lastYear:before {
+    content: "|";
+    transform: rotate(45deg);
+    position: absolute;
+    left: 2px;
+    top: -10px;
+    font-size: 22px;
+    color: #ccc;
+}
+
+.heatMapGridItem.last7 {
+    border-right: 1px solid black;
+}
+
+.heatMapGridItem.lastDay {
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
+
+.heatMapGridItemBackground.selected {
+    box-shadow: inset 0 0 0 1px #02a5a5, inset 0 0 0 3px #fff;
+}
+
+.heatMapGridItemBackground.selected:before {
+    position: absolute;
+    content:"a";
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    opacity:1;
+    background-color: #4f585859;
+}
+
+.heatMapGridItemBackground {
+    background-color: #ddd;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    z-index: -1;
+    transition: background-color .2s ease-in-out, box-shadow .2s ease-out;
+}
+
+.heatMapGridItemBackground.colorScale0{background-color: #ddd;}
+.heatMapGridItemBackground.colorScale1{background-color: rgb(002, 184, 184);}
+.heatMapGridItemBackground.colorScale2{background-color: rgb(002, 146, 146);}
+.heatMapGridItemBackground.colorScale3{background-color: rgb(001, 107, 107);}
+.heatMapGridItemBackground.colorScale4{background-color: rgb(001, 068, 068);}
+
+.heatMapGridItemTooltip {
+    font-size: 12px;
+    width: 100px;
+    padding: 2px;
+    background-color: #4f5858;
+    color: #fff;
+    position: absolute;
+    display: none;
+    right: 2px;
+    bottom: 20px;
+    border-radius: 3px;
+}
+
+span.heatMapGridItemTooltip::after {
+    content: "";
+    background-color: #4f5858;
+    position: absolute;
+    right: 8px;
+    bottom: -4px;
+    width: 12px;
+    height: 12px;
+    z-index: -1;
+    transform: skew(45deg) rotate(34deg);
+}
+
+.heatMapGridItem:hover .heatMapGridItemTooltip {
+    display: block;
+}
+
+.heatMapMonths {
+    font-size: 10px;
+    display: grid;
+    width: 10px;
+    height: 10px;
+    transform: rotate(-90deg) scaleX(-1);
+    grid-gap: 2px;
+    grid-template-columns: repeat(1, 0fr);
+    grid-template-rows: repeat(52, 0fr);
+    margin-top: 10px;
+    margin-left: 25px;
+}
+
+.heatMapMonth {
+    width: 13px;
+    height: 13px;
+    transform: rotate(-90deg) scaleX(-1);
+}
+
+.heatMapMonthShrink {
+    width: 11px;
+    height: 11px;
+    transform: rotate(-90deg) scaleX(-1);
+}
+
+.heatMapScale {
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+    width: 100%;
+}
+
+.heatMapGridItem.scale {
+    margin: 1px;
+    transform: rotate(0deg) scaleX(1);
+}
+
+.heatMapGridItemScaleGradient {
+    width: 200px;
+    height: 13px;
+    margin: 1px;
+    background: linear-gradient(to right, rgba(221,221,221,1) 0%, rgba(2,184,184,1) 25%, rgba(3,145,145,1) 50%, rgba(1,107,107,1) 75%, rgba(1,68,68,1) 100%); 
+}
+
+.heatMapOptions {
+    padding: 10px;
+}
