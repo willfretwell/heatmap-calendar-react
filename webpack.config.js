@@ -13,16 +13,16 @@ const webpackConfig = {
     path: path.resolve(__dirname),
     filename: 'index.js',
     library: 'HeatMapGraph',
-    libraryTarget: 'umd',
+    libraryTarget: 'commonjs2'
   },
   resolve: {
-    extensions: ['.js', '.jsx'],
+    extensions: ['', '.js', '.jsx'],
     modules: ['node_modules'],
   },
   module: {
     rules: [
       {
-        test: /\.js$/,
+        test: /\.jsx$/,
         include: path.resolve(__dirname, 'src'),
         exclude: /(node_modules|bower_components|build)/,
         use: {
@@ -44,6 +44,7 @@ const webpackConfig = {
         } 
     ],
   },
+  externals: { 'react': 'commonjs react' }
 };
 
 module.exports = webpackConfig;
