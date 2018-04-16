@@ -12,7 +12,7 @@ const webpackConfig = {
   output: {
     path: path.resolve(__dirname),
     filename: 'index.js',
-    library: 'heatMapGraph',
+    library: 'HeatMapGraph',
     libraryTarget: 'umd',
   },
   resolve: {
