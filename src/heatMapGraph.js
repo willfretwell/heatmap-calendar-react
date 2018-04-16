@@ -1,9 +1,9 @@
 import React, {Component} from "react";
-import "./css/heatMapGraph.css";
+import "./heatMapGraph.css";
 import findMonthString from "./monthToString";
-import heatMapScale from "./heatMapHelpers/heatMapScale";
-import dateHandle from "./heatMapHelpers/dateHandlers";
-import diff from "./heatMapHelpers/getDifference";
+import heatMapScale from "./heatMapScale";
+import dateHandle from "./dateHandlers";
+import diff from "./getDifference";
 
 var dateNow = dateHandle.dateNow();
 var daysInYear = dateHandle.daysInYear();
