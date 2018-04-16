@@ -13,7 +13,7 @@ var mouseDown;
 document.body.onmousedown = function() {mouseDown = true}
 document.body.onmouseup = function() {mouseDown = false}
 
-class heatMapGraph extends Component {
+class HeatMapGraph extends Component {
     constructor(props) {
         super(props);
 
@@ -299,4 +299,4 @@ class heatMapGraph extends Component {
     }
 };
 
-export default heatMapGraph;
+export default HeatMapGraph;
