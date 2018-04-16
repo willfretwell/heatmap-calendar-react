@@ -42,7 +42,7 @@ const webpackConfig = {
 if (nodeEnv === 'development') {
   webpackConfig.devtool = 'source-map';
   webpackConfig.devServer = { contentBase: './demo' };
-  webpackConfig.entry['react-calendar-heatmap'].unshift('webpack-dev-server/client?http://0.0.0.0:8080/');
+  webpackConfig.entry['heatmap-calendar-react'].unshift('webpack-dev-server/client?http://0.0.0.0:8080/');
   webpackConfig.output.publicPath = '/';
 }
 
