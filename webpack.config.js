@@ -1,32 +1,47 @@
 const webpack = require('webpack');
 const path = require('path');
-const pak = require('./package.json');
+const pkg = require('./package.json');
+
+const libraryName = pkg.name;
 
 const webpackConfig = {
   context: __dirname,
-  entry: {
-    'heatmap-calendar-react': [
-      path.resolve(__dirname, 'src', 'index.jsx'),
-    ]
-  },
+  entry: path.join(__dirname, "./src/index.jsx"),
   output: {
-    path: path.resolve(__dirname),
+    path: path.join(__dirname, './dist'),
     filename: 'index.js',
-    library: 'HeatMapGraph',
-    libraryTarget: 'umd'
+    library: libraryName,
+    libraryTarget: 'umd',
+    publicPath: '/dist/',
+    umdNamedDefine: true
   },
   resolve: {
-    extensions: ['.js', '.jsx'],
-    modules: ['node_modules']
+    alias: {
+      'react': path.resolve(__dirname, './node_modules/react'),
+      'react-dom': path.resolve(__dirname, './node_modules/react-dom'),
+    }
+  },
+  externals: {
+      react: {
+        commonjs: "react",
+        commonjs2: "react",
+        amd: "React",
+        root: "React"
+      },
+      "react-dom": {
+        commonjs: "react-dom",
+        commonjs2: "react-dom",
+        amd: "ReactDOM",
+        root: "ReactDOM"
+      }
   },
   module: {
     rules: [
       {
-        test: /\.jsx?$/,
-        exclude: /(node_modules)/,
-        use: [{
-          loader: 'babel-loader',
-        }]
+        test: /\.(js|jsx)$/,
+        use: ["babel-loader"],
+        include: path.resolve(__dirname, "src"),
+        exclude: /node_modules/,
       }
     ]
   }
