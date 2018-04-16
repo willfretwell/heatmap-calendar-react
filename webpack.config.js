@@ -7,44 +7,29 @@ const webpackConfig = {
   entry: {
     'heatmap-calendar-react': [
       path.resolve(__dirname, 'src', 'index.jsx'),
-    ],
+    ]
   },
   output: {
     path: path.resolve(__dirname),
     filename: 'index.js',
     library: 'HeatMapGraph',
-    libraryTarget: 'commonjs2'
+    libraryTarget: 'umd'
   },
   resolve: {
-    extensions: ['', '.js', '.jsx'],
-    modules: ['node_modules'],
+    extensions: ['.js', '.jsx'],
+    modules: ['node_modules']
   },
   module: {
     rules: [
       {
-        test: /\.jsx$/,
-        include: path.resolve(__dirname, 'src'),
-        exclude: /(node_modules|bower_components|build)/,
-        use: {
+        test: /\.jsx?$/,
+        exclude: /(node_modules)/,
+        use: [{
           loader: 'babel-loader',
-          options: {
-            presets: ['env']
-          }
-        }
-      },
-      {
-        test: /\.css$/,
-        use: [
-          'style-loader',
-            'css-loader'
-        ]
-     },
-        {
-            test: /\.(jpe?g|png|gif|svg)$/i, loader: "url-loader?name=src/images/[name].[ext]"
-        } 
-    ],
-  },
-  externals: { 'react': 'commonjs react' }
+        }]
+      }
+    ]
+  }
 };
 
 module.exports = webpackConfig;
