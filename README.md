@@ -1,5 +1,6 @@
 # heatmap-calendar-react
 A calendar with heatmap visualization. Based on GitHub's commit graph.
+[![npm version](https://badge.fury.io/js/heatmap-calendar-react.svg)](https://badge.fury.io/js/heatmap-calendar-react)
 
 ## Installation
 
