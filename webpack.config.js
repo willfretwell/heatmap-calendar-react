@@ -6,7 +6,7 @@ const webpackConfig = {
   context: __dirname,
   entry: {
     'heatmap-calendar-react': [
-      path.resolve(__dirname, 'heatMapGraph.js'),
+      path.resolve(__dirname, 'src', 'index.jsx'),
     ],
   },
   output: {
