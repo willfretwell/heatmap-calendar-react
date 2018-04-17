@@ -30,12 +30,25 @@ const webpackConfig = {
           loader: 'babel-loader',
         }],
       },
+      {
+        test: /\.*css$/,
+        exclude: /(node_modules)/,
+        use: ExtractTextPlugin.extract({
+            fallback: 'style-loader',
+            use: [
+                'css-loader'
+            ]
+        })
+      }
     ],
   },
   plugins: [
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify(nodeEnv),
     }),
+    new ExtractTextPlugin({
+      filename: 'myUnflappableComponent.css',
+  }),
   ],
 };
 

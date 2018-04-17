@@ -3,6 +3,7 @@ import findMonthString from "./monthToString";
 import heatMapScale from "./heatMapScale";
 import dateHandle from "./dateHandlers";
 import diff from "./getDifference";
+import "./heatMapGraph.css";
 
 var dateNow = dateHandle.dateNow();
 var daysInYear = dateHandle.daysInYear();
