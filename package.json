@@ -6,13 +6,8 @@
   "main": "build/index.js",
   "scripts": {
     "build": "cross-env NODE_ENV=production webpack",
-    "build:demo": "cross-env NODE_ENV=demo webpack",
-    "deploy:demo": "npm run build:demo && ./scripts/build_ghpages.sh",
-    "clean": "rimraf build",
     "lint": "eslint --ext .js,.jsx --cache . && echo \"eslint: no lint errors found\" || true",
-    "prepublish": "npm run clean && npm run build",
-    "test": "jest --coverage",
-    "test:watch": "npm test -- --watch",
+    "prepublish": "npm run build",
     "start": "webpack-dev-server --progress --inline"
   },
   "publishConfig": {
