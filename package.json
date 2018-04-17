@@ -10,9 +10,6 @@
     "prepublishOnly": "npm run build",
     "start": "webpack-dev-server --progress --inline"
   },
-  "publishConfig": {
-    "access": "restricted"
- },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/willfretwell/heatmap-calendar-react.git"
