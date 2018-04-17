@@ -1,5 +1,4 @@
 import React, {Component} from "react";
-import "./css.css";
 import findMonthString from "./monthToString";
 import heatMapScale from "./heatMapScale";
 import dateHandle from "./dateHandlers";
