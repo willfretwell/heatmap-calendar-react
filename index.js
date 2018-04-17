@@ -1,5 +1,5 @@
 import React from "react";
-import HeatMapGraph from "./src/index";
+import HeatMapGraph from "./src/heatMapGraph";
 
 const HeatmapCalendar = ({receiveDates, data, weekdayLabels, showDate, highAccuracy, showBorder, addGap, showTooltip, keyNavigation, setYear, onClick}) => (
     <HeatMapGraph 

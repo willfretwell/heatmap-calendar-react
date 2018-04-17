@@ -1,12 +1,9 @@
 {
   "name": "heatmap-calendar-react",
-  "version": "1.0.0-beta.24",
+  "version": "1.0.0-beta.25",
   "description": "\u0016A calendar with heatmap visualization. Based on GitHub's commit graph.",
   "author": "Will Fretwell",
-  "main": "dist/index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "main": "build/index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/willfretwell/heatmap-calendar-react.git"
@@ -21,24 +18,24 @@
   ],
   "license": "MIT",
   "peerDependencies": {
-    "react": "^0.14.0 || ^15.0.0 || ^16.0.0",
-    "react-dom": "16.3.1"
-  },
-  "devDependencies": {
-    "babel-core": "^6.26.0",
-    "babel-eslint": "^8.0.0",
-    "babel-loader": "^7.1.4",
-    "babel-preset-env": "^1.6.1",
-    "babel-preset-react": "^6.24.1",
-    "babel-preset-stage-2": "^6.24.1",
-    "babel-register": "^6.0.0",
-    "react": "^16.3.1",
-    "react-dom": "^16.3.1",
-    "webpack": "^3.11.0",
-    "webpack-dev-server": "^2.0.0"
+    "react": "^15.5.4"
   },
   "dependencies": {
-    "react-scripts": "^1.1.4"
+    "react": "^15.5.4",
+    "webpack": "^2.6.1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-core": "^6.24.1",
+    "babel-loader": "^7.0.0",
+    "babel-plugin-transform-object-rest-spread": "^6.23.0",
+    "babel-plugin-transform-react-jsx": "^6.24.1",
+    "babel-preset-env": "^1.5.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack --watch",
+    "build": "webpack"
   },
   "bugs": {
     "url": "https://github.com/willfretwell/heatmap-calendar-react/issues"
