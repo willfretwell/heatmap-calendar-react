@@ -1,52 +1,50 @@
 const webpack = require('webpack');
-const pkg = require('./package.json');
 const path = require('path');
+const pkg = require('./package.json');
 
 const libraryName = pkg.name;
 
-module.exports = {
-  entry: [
-    './index.js'
-  ],
-  module: {
-    rules: [
-      {
-        test: /\.(js|jsx)$/,
-        exclude: /node_modules/,
-        use: ['babel-loader']
-      }
-    ]
+const webpackConfig = {
+  context: __dirname,
+  entry: path.join(__dirname, "./index.js"),
+  output: {
+    path: path.join(__dirname, './dist'),
+    filename: 'index.js',
+    library: libraryName,
+    libraryTarget: 'umd',
+    publicPath: '/dist/',
+    umdNamedDefine: true
   },
   resolve: {
-    extensions: ['*', '.js', '.jsx'],
     alias: {
       'react': path.resolve(__dirname, './node_modules/react'),
       'react-dom': path.resolve(__dirname, './node_modules/react-dom'),
     }
   },
   externals: {
-    react: {
+      react: {
         commonjs: "react",
         commonjs2: "react",
         amd: "React",
         root: "React"
-    },
-    "react-dom": {
+      },
+      "react-dom": {
         commonjs: "react-dom",
         commonjs2: "react-dom",
         amd: "ReactDOM",
         root: "ReactDOM"
-    }
+      }
   },
-  output: {
-    path: path.join(__dirname, './dist'),
-    filename: 'bundle.js',
-    library: libraryName,
-    libraryTarget: 'umd',
-    publicPath: '/dist/',
-    umdNamedDefine: true
-  },
-  devServer: {
-    contentBase: './dist'
+  module: {
+    rules: [
+      {
+        test: /\.(js|jsx)$/,
+        use: ["babel-loader"],
+        include: path.resolve(__dirname, "src"),
+        exclude: /node_modules/,
+      }
+    ]
   }
 };
+
+module.exports = webpackConfig;
