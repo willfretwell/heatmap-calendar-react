@@ -6,7 +6,11 @@ const libraryName = pkg.name;
 
 const webpackConfig = {
   context: __dirname,
-  entry: path.join(__dirname, "./src/index.jsx"),
+  entry: {
+    'react-calendar-heatmap': [
+      path.resolve(__dirname, 'index.js'),
+    ],
+  },
   output: {
     path: path.join(__dirname, './dist'),
     filename: 'index.js',
