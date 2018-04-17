@@ -1,50 +1,79 @@
 const webpack = require('webpack');
 const path = require('path');
-const pkg = require('./package.json');
+const pak = require('./package.json');
 
-const libraryName = pkg.name;
+const nodeEnv = process.env.NODE_ENV || 'development';
 
 const webpackConfig = {
   context: __dirname,
-  entry: path.join(__dirname, "./index.js"),
+  entry: {
+    'heatmap-calendar-react': [
+      path.resolve(__dirname, 'src', 'index.jsx'),
+    ],
+  },
   output: {
-    path: path.join(__dirname, './dist'),
+    path: path.resolve(__dirname),
     filename: 'index.js',
-    library: libraryName,
+    library: 'HeatMapGraph',
     libraryTarget: 'umd',
-    publicPath: '/dist/',
-    umdNamedDefine: true
   },
   resolve: {
-    alias: {
-      'react': path.resolve(__dirname, './node_modules/react'),
-      'react-dom': path.resolve(__dirname, './node_modules/react-dom'),
-    }
-  },
-  externals: {
-      react: {
-        commonjs: "react",
-        commonjs2: "react",
-        amd: "React",
-        root: "React"
-      },
-      "react-dom": {
-        commonjs: "react-dom",
-        commonjs2: "react-dom",
-        amd: "ReactDOM",
-        root: "ReactDOM"
-      }
+    extensions: ['.js', '.jsx'],
+    modules: ['node_modules'],
   },
   module: {
     rules: [
       {
-        test: /\.(js|jsx)$/,
-        use: ["babel-loader"],
-        include: path.resolve(__dirname, "src"),
-        exclude: /node_modules/,
-      }
-    ]
-  }
+        test: /\.jsx?$/,
+        exclude: /(node_modules)/,
+        use: [{
+          loader: 'babel-loader',
+        }],
+      },
+    ],
+  },
+  plugins: [
+    new webpack.DefinePlugin({
+      'process.env.NODE_ENV': JSON.stringify(nodeEnv),
+    }),
+  ],
 };
+
+if (nodeEnv === 'development') {
+  webpackConfig.devtool = 'source-map';
+  webpackConfig.devServer = { contentBase: './demo' };
+  webpackConfig.entry['heatmap-calendar-react'].unshift('webpack-dev-server/client?http://0.0.0.0:8080/');
+  webpackConfig.entry['heatmap-calendar-react'].push(path.resolve(__dirname, 'demo', 'demo.jsx'));
+  webpackConfig.output.publicPath = '/';
+}
+
+if (nodeEnv === 'demo') {
+  webpackConfig.entry['heatmap-calendar-react'].push(path.resolve(__dirname, 'demo', 'demo.jsx'));
+  webpackConfig.output.path = path.resolve(__dirname, 'demo');
+}
+
+if (nodeEnv === 'development' || nodeEnv === 'demo') {
+  webpackConfig.plugins.push(new webpack.DefinePlugin({
+    COMPONENT_NAME: JSON.stringify(pak.name),
+    COMPONENT_VERSION: JSON.stringify(pak.version),
+    COMPONENT_DESCRIPTION: JSON.stringify(pak.description),
+  }));
+}
+
+if (nodeEnv === 'production') {
+  webpackConfig.externals = {
+    react: {
+      root: 'React',
+      commonjs2: 'react',
+      commonjs: 'react',
+      amd: 'react',
+    },
+  };
+  webpackConfig.output.path = path.resolve(__dirname, 'build');
+  webpackConfig.plugins.push(new webpack.optimize.UglifyJsPlugin({
+    compress: { warnings: false },
+    sourceMap: false,
+  }));
+}
 
 module.exports = webpackConfig;
