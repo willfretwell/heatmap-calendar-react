@@ -1,6 +1,7 @@
 const webpack = require('webpack');
 const path = require('path');
 const pak = require('./package.json');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const nodeEnv = process.env.NODE_ENV || 'development';
 
@@ -47,7 +48,7 @@ const webpackConfig = {
       'process.env.NODE_ENV': JSON.stringify(nodeEnv),
     }),
     new ExtractTextPlugin({
-      filename: 'myUnflappableComponent.css',
+      filename: 'heatMapGraph.css',
   }),
   ],
 };
