@@ -48,7 +48,7 @@ const webpackConfig = {
       'process.env.NODE_ENV': JSON.stringify(nodeEnv),
     }),
     new ExtractTextPlugin({
-      filename: 'heatMapGraph.css',
+      filename: 'style.css',
   }),
   ],
 };

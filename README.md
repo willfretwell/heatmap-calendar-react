@@ -19,6 +19,7 @@ Import:
 
 ```javascript
 import HeatMapGraph from 'heatmap-calendar-react';
+import 'heatmap-calendar-react/build/style.css';
 ```
 
 Display empty heatmap:
@@ -32,21 +33,33 @@ Display basic heatmap:
 ```javascript
 <HeatMapGraph
    data={[
-      { date: '2018-01-01'},
-      { date: '2018-01-02'},
-      { date: '2018-01-03'}
+      { date: '2018-01-01' },
+      { date: '2018-01-02' },
+      { date: '2018-01-03' }
    ]}
 />
 ```
 
-Display basic heatmap with density:
+Display heatmap with density:
 
 ```javascript
 <HeatMapGraph
    data={[
-      { date: '2018-01-01', total: 10},
-      { date: '2018-01-02', total: 12},
-      { date: '2018-01-03', total: 14}
+      { date: '2018-01-01', total: 10 },
+      { date: '2018-01-02', total: 12 },
+      { date: '2018-01-03', total: 14 }
+   ]}
+/>
+```
+
+Display heatmap with density and tooltips:
+
+```javascript
+<HeatMapGraph
+   data={[
+      { date: '2018-01-01', total: 10, name: "Total" },
+      { date: '2018-01-02', total: 12, name: "Total" },
+      { date: '2018-01-03', total: 14, name: "Total" }
    ]}
 />
 ```
