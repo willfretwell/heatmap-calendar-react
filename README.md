@@ -22,13 +22,13 @@ import HeatmapCalendar from 'heatmap-calendar-react';
 import 'heatmap-calendar-react/build/style.css';
 ```
 
-Display empty heatmap:
+Display empty calendar:
 
 ```javascript
 <HeatmapCalendar/>
 ```
 
-Display basic heatmap:
+Display basic calendar:
 
 ```javascript
 <HeatmapCalendar
@@ -40,7 +40,7 @@ Display basic heatmap:
 />
 ```
 
-Display heatmap with density:
+Display calendar with heatmap density:
 
 ```javascript
 <HeatmapCalendar
@@ -52,7 +52,7 @@ Display heatmap with density:
 />
 ```
 
-Display heatmap with density and tooltips:
+Display calendar with heatmap density and tooltips:
 
 ```javascript
 <HeatmapCalendar
