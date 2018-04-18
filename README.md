@@ -22,13 +22,13 @@ import HeatmapCalendar from 'heatmap-calendar-react';
 import 'heatmap-calendar-react/build/style.css';
 ```
 
-Display empty heatmap:
+Display empty calendar:
 
 ```javascript
 <HeatmapCalendar/>
 ```
 
-Display basic heatmap:
+Display basic calendar:
 
 ```javascript
 <HeatmapCalendar
@@ -40,7 +40,7 @@ Display basic heatmap:
 />
 ```
 
-Display heatmap with density:
+Display calendar with heatmap density:
 
 ```javascript
 <HeatmapCalendar
@@ -52,7 +52,7 @@ Display heatmap with density:
 />
 ```
 
-Display heatmap with density and tooltips:
+Display calendar with heatmap density and tooltips:
 
 ```javascript
 <HeatmapCalendar
@@ -100,7 +100,7 @@ Display heatmap with density and tooltips:
     //Optional --- Allows user to navigate their selection using the arrows keys and close their selection using the escape key.
     
     setYear={number} 
-    //Optional --- The default year will be the current year, however this can be changed by entering a numeric value e.g. 2010
+    //Optional --- The default year will be the current year, however this can be changed by entering a numeric value e.g. 2010.
     
     onClick={(e, day) => console.log(e, day)} 
     //Optional --- Instead on using receiveDates, you can use onClick. This will only allow the user to make one selection at a time.

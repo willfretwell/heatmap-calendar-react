@@ -1,6 +1,6 @@
 {
   "name": "heatmap-calendar-react",
-  "version": "1.0.0-beta.35",
+  "version": "1.0.0-beta.36",
   "description": "\u0016A calendar with heatmap visualization. Based on GitHub's commit graph.",
   "author": "Will Fretwell",
   "main": "build/index.js",
