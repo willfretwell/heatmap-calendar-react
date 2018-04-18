@@ -5,6 +5,8 @@ PLEASE NOTE: This is a work in progress and may not work as expected.
 
 [![npm version](https://badge.fury.io/js/heatmap-calendar-react.svg)](https://badge.fury.io/js/heatmap-calendar-react)
 
+[![heatmap calendar](https://github.com/willfretwell/heatmap-calendar-react/blob/master/images/heatmap.jpg)]
+
 ## Installation
 
 Install:
@@ -21,6 +23,8 @@ Import:
 import HeatmapCalendar from 'heatmap-calendar-react';
 import 'heatmap-calendar-react/build/style.css';
 ```
+
+### Examples
 
 Display empty calendar:
 
@@ -106,6 +110,22 @@ Display calendar with heatmap density and tooltips:
     //Optional --- Instead on using receiveDates, you can use onClick. This will only allow the user to make one selection at a time.
 />
 ```
+
+### Properties
+
+|Property        | Usage           | Default  | Required |
+|:------------- |:-------------|:-----:|:-----:|
+| receiveDates | Receive the dates that the user selects, they will be able to select multiple dates. | none | no |
+| data | Array of objects. e.g. [{ date: '2018-01-03', total: 14, name: "Total" }] | none | no |
+| weekdayLabels | Array of strings | ["","M","","W","","F",""] | no |
+| showDate | Boolean - Display the date inside each calendar day | false | no |
+| highAccuracy | Boolean - Increases accuracy of heatmap colours | false | no |
+| showBorder | Boolean - Applies a border around months | false | no |
+| addGap | Boolean - Applies a gap between months | false | no |
+| showTooltip | Boolean - Displays a tooltip over days when hovered | false | no |
+| keyNavigation | Boolean - Navigate selection with arrow keys | false | no |
+| setYear | Display a different year | Current year | no |
+| onClick | Returns date clicked | none | no |
 
 ## Configuring colors
 
