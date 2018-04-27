@@ -3,7 +3,7 @@ A calendar with heatmap visualization. Based on GitHub's commit graph.
 
 [![npm version](https://badge.fury.io/js/heatmap-calendar-react.svg)](https://badge.fury.io/js/heatmap-calendar-react)
 
-[![heatmap calendar](https://github.com/willfretwell/heatmap-calendar-react/blob/master/images/heatmap.jpg)]
+![heatmap calendar](https://github.com/willfretwell/heatmap-calendar-react/blob/master/images/heatmap.jpg)
 
 ## Installation
 
