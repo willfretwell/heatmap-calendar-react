@@ -1,5 +1,7 @@
 # heatmap-calendar-react
-A calendar with heatmap visualization. Based on GitHub's commit graph.
+An interactive calendar with heatmap visualization. Based on GitHub's commit graph.
+
+The user can interact with the calendar using hover, click, click & drag, month selection and weekday selection. As well as navigate through the calendar with their selection using arrow keys: left, right, up, down, esc to cancel. Once the user has selected a date (or multiple dates) they can use the shift key to expand their selection. E.g. shift + right arrow key to expand right.
 
 [![npm version](https://badge.fury.io/js/heatmap-calendar-react.svg)](https://badge.fury.io/js/heatmap-calendar-react)
 
